@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Protected Content</h1>
-    <p>Only visible to users with the correct password.</p>
+    <div class="container">
+        <h1>Protected Content</h1>
+        <p>You passed</p>
+        
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options" onchange="navigateToPage()">
+            <option value="">Select an option</option>
+            <option value="option-pages/page1.html">Option 1</option>
+            <option value="option-pages/page2.html">Option 2</option>
+            <option value="option-pages/page3.html">Option 3</option>
+            <option value="option-pages/page4.html">Option 4</option>
+            <option value="option-pages/page5.html">Option 5</option>
+            <option value="option-pages/page6.html">Option 6</option>
+            <option value="option-pages/page7.html">Option 7</option>
+            <option value="option-pages/page8.html">Option 8</option>
+            <option value="option-pages/page9.html">Option 9</option>
+            <option value="option-pages/page10.html">Option 10</option>
+            <option value="option-pages/page11.html">Option 11</option>
+            <option value="option-pages/page12.html">Option 12</option>
+            <option value="option-pages/page13.html">Option 13</option>
+            <option value="option-pages/page14.html">Option 14</option>
+            <option value="option-pages/page15.html">Option 15</option>
+            <option value="option-pages/page16.html">Option 16</option>
+            <option value="option-pages/page17.html">Option 17</option>
+            <option value="option-pages/page18.html">Option 18</option>
+            <option value="option-pages/page19.html">Option 19</option>
+            <option value="option-pages/page20.html">Option 20</option>
+            <option value="option-pages/page21.html">Option 21</option>
+            <option value="option-pages/page22.html">Option 22</option>
+            <option value="option-pages/page23.html">Option 23</option>
+            <option value="option-pages/page24.html">Option 24</option>
+            <option value="option-pages/page25.html">Option 25</option>
+            <option value="option-pages/page26.html">Option 26</option>
+            <option value="option-pages/page27.html">Option 27</option>
+            <option value="option-pages/page28.html">Option 28</option>
+            <option value="option-pages/page29.html">Option 29</option>
+            <option value="option-pages/page30.html">Option 30</option>
+            <option value="option-pages/page31.html">Option 31</option>
+            <option value="option-pages/page32.html">Option 32</option>
+            <option value="option-pages/page33.html">Option 33</option>
+            <option value="option-pages/page34.html">Option 34</option>
+            <option value="option-pages/page35.html">Option 35</option>
+            <option value="option-pages/page36.html">Option 36</option>
+        </select>
+    </div>
+
+    <script>
+        function navigateToPage() {
+            if (localStorage.getItem('authenticated') !== 'true') {
+                alert('You are not authorized to access this page.');
+                window.location.href = '../index.html';
+                return;
+            }
+
+            var select = document.getElementById('options');
+            var page = select.value;
+            if (page) {
+                window.location.href = page;
+            }
+        }
+
+        // Redirect to login if not authenticated
+        if (localStorage.getItem('authenticated') !== 'true') {
+            alert('You are not authorized to access this page.');
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>
